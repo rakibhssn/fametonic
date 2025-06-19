@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #010101;
+  --header1: #fc004e;
+  --header2: #10cbe0;
+  --button-shadow: #00e7f9;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-header1: var(--header1);
+  --color-header2: var(--header2);
+  --color-button-shadow: var(--button-shadow);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-figtree: var(--font-figtree);
+  --font-urbanist: var(--font-urbanist);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #010101;
+    --foreground: #ededed;
+    --header1: #fc004e;
+    --header2: #10cbe0;
+    --button-shadow: #00e7f9;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.fame__header {
+  @apply flex justify-center py-3 md:py-0 place-content-center place-items-center bg-gradient-to-r from-20% from-header1 to-header2 min-h-[46px] px-4;
+}
+.fame__header > p {
+  @apply text-center font-bold text-white text-sm md:text-lg;
+}
+.fame__header > p > span {
+  @apply text-header2 text-base md:text-xl;
+}
+.fame__body {
+  @apply max-w-[980px] w-full mx-auto px-4 py-4 md:py-8;
+}
+.fame__body-header-container {
+  @apply flex place-items-center md:place-items-start justify-center md:justify-between relative;
+}
+
+.fame__menu > span {
+  @apply flex md:hidden w-6 h-6 cursor-pointer absolute right-4;
+}
+.fame__menu-list {
+  @apply hidden md:flex;
+}
+.fame__menu-list > ul {
+  @apply flex flex-row gap-4 place-items-center;
+}
+.fame__menu-list > ul > li {
+  @apply px-4 font-semibold text-lg cursor-pointer font-figtree;
+}
+.fame__menu-list.active {
+  @apply !flex absolute right-4 top-20 shadow-md shadow-gray-500 rounded z-[99] bg-background;
+}
+.fame__menu-list.active > ul {
+  @apply flex-col place-items-start p-4;
+}
+.fame__menu-list.active > ul > li {
+  @apply !px-0 w-28;
+}
+
+.fame__body-content {
+  @apply flex flex-col-reverse md:flex-row relative py-4 place-content-center justify-between;
+}
+.fame__body-content-img {
+  @apply relative md:absolute md:-right-28 max-w-[666px] p-4 w-full overflow-hidden flex place-content-center place-items-center justify-end;
+}
+.fame__body-content-img > img {
+  @apply w-[680px];
+}
+.fame__body-content-text {
+  @apply relative z-50 max-w-[470px] md:h-[646px] grid place-content-center;
+}
+.fame__body-content-text > p {
+  @apply text-2xl md:text-3xl font-extrabold font-urbanist text-center md:text-left px-4;
+}
+.fame__body-content-text > p:nth-child(2) {
+  @apply text-header2 text-shadow-sm text-shadow-header1;
+}
+.fame__body-content-text-list {
+  @apply flex flex-col gap-2 pt-4;
+}
+.fame__body-content-text-list > li {
+  @apply flex flex-row place-items-center gap-2;
+}
+.fame__body-content-text-button-container {
+  @apply flex flex-col gap-[10px] py-[30px];
+}
+.fame__body-content-text-button {
+  @apply bg-header1 w-full md:w-[313px] px-4 py-2 text-xl font-figtree font-bold flex flex-row gap-2 place-items-center rounded-[10px] shadow-[2px_2px_10px_#00e7f9]  justify-center;
+}
+.fame__body-content-text-button-container > p {
+  @apply text-xs font-figtree text-center w-full md:w-[313px];
+}
+.fame__body-content-text-footer-container {
+  @apply flex flex-col-reverse md:flex-col pt-[22px] md:pt-0;
+}
+.fame__body-content-text-footer {
+  @apply flex flex-col gap-3;
+}
+.fame__body-content-text-footer > p {
+  @apply font-figtree text-xs last:text-[10px] font-medium text-center md:text-left px-6 md:px-0;
+}
