@@ -46,7 +46,7 @@ body {
   @apply text-header2 text-base md:text-xl;
 }
 .fame__body {
-  @apply max-w-[980px] w-full mx-auto px-4 py-4 md:py-8;
+  @apply max-w-[980px] w-full mx-auto px-4 py-4;
 }
 .fame__body-header-container {
   @apply flex place-items-center md:place-items-start justify-center md:justify-between relative;
@@ -78,13 +78,13 @@ body {
   @apply flex flex-col-reverse md:flex-row relative py-4 place-content-center justify-between;
 }
 .fame__body-content-img {
-  @apply relative md:absolute md:-right-28 max-w-[666px] p-4 w-full overflow-hidden flex place-content-center place-items-center justify-end;
+  @apply relative md:absolute md:-right-28 md:-top-0 max-w-[666px] md:h-[620px] w-full overflow-hidden flex place-content-center place-items-center justify-end;
 }
 .fame__body-content-img > img {
-  @apply w-[680px];
+  @apply w-[620px];
 }
 .fame__body-content-text {
-  @apply relative z-50 max-w-[470px] md:h-[646px] grid place-content-center;
+  @apply relative z-50 max-w-[470px] md:h-[570px] grid place-content-center;
 }
 .fame__body-content-text > p {
   @apply text-2xl md:text-3xl font-extrabold font-urbanist text-center md:text-left px-4;
