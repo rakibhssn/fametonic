@@ -36,6 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={figTree.variable + " " + urbanist.variable}>
+      <head>
+        <link rel="icon" href="/Images/logo.png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
